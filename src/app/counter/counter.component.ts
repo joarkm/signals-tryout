@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,5 +15,13 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent {
-  count = 0;
+  count = signal(0);
+
+  add(): void {
+    this.count.update(val => val + 1);
+  }
+
+  subtract(): void {
+    this.count.update(val => val - 1);
+  }
 }

@@ -1,12 +1,12 @@
 <section class="counter">
-    <pre>{{ count }}</pre>
+    <pre>{{ count() }}</pre>
     
     <div class="counter__actions">
         
-        <button mat-mini-fab matTooltip="Subtract" color="primary" aria-label="Subtract 1 from the counter">
+        <button (click)="subtract()" mat-mini-fab matTooltip="Subtract" color="primary" aria-label="Subtract 1 from the counter">
             <mat-icon>remove</mat-icon>
         </button>
-        <button mat-mini-fab matTooltip="Add" color="primary" aria-label="Add 1 to the counter">
+        <button (click)="add()" mat-mini-fab matTooltip="Add" color="primary" aria-label="Add 1 to the counter">
             <mat-icon>add</mat-icon>
         </button>
     </div>
